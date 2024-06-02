@@ -1,0 +1,25 @@
+# 忽略编译输出目录
+out/
+
+# 忽略编译生成的文件
+*.class
+*.o
+*.a
+*.so
+*.dll
+*.exe
+
+# 忽略IDE的配置文件和文件夹
+.vscode/
+.idea/
+*.iml
+
+# 忽略临时文件和日志文件
+*.log
+*.tmp
+*.swp
+*.bak
+
+# 忽略操作系统文件
+.DS_Store
+Thumbs.db
