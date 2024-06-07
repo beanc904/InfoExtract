@@ -8,10 +8,9 @@ import com.beanc.SerialPort.Link;
 
 public class Main {
     public static void main(String[] args) {
-        //SolveToOriginalInfo info = new SolveToOriginalInfo("$GNGGA,084724.00," +
-        //        "3641.1191106,N,11710.8015014,E,1,64,1.0,82.175,M,-2.200,M,0.0,0000*76");
-        new Link();
-        SolveToOriginalInfo info = new SolveToOriginalInfo(Link.getGnggaData());
+        SolveToOriginalInfo info = new SolveToOriginalInfo("$GNGGA,084724.00," +
+                "3641.1191106,N,11710.8015014,E,1,64,1.0,82.175,M,-2.200,M,0.0,0000*76");
+        //new Link();
 
         System.out.println("数据检测：" +info.getCheckGNGGA()+
                 "\n时间：" +info.getUtcTime(UTC.HOURS)+"h "+
