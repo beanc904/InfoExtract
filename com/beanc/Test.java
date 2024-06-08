@@ -1,5 +1,6 @@
 package com.beanc;
 
+import com.beanc.DataConversion.EasyConversion;
 import com.beanc.SerialPort.Link;
 
 public class Test {
@@ -12,7 +13,11 @@ public class Test {
         }
 
         while (true) {
-            System.out.println(Link.getGnggaData());
+            if (Link.getGnggaData() != null) {
+                System.out.println("经度："+ EasyConversion.GNGGA_To_GCJ02(Link.getGnggaData())[0] +
+                        "\t纬度："+ EasyConversion.GNGGA_To_GCJ02(Link.getGnggaData())[1]);
+            }
+
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
