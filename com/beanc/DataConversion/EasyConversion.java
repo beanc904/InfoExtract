@@ -4,6 +4,7 @@ import com.beanc.Extract.SolveToOriginalInfo;
 
 public class EasyConversion {
     /**
+     * 直接将原始$GNGGA报文数据转换为GCJ-02ddd经纬坐标数据
      * 请确认数据正确
      * @param gnggaData 原始报文数据
      * @return  GCJ-02(高德)可用数据

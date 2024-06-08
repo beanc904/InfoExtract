@@ -1,15 +1,14 @@
 package com.beanc;
 
 import com.beanc.DataConversion.Conversion;
+import com.beanc.DataConversion.EasyConversion;
 import com.beanc.Extract.SolveToOriginalInfo;
 import com.beanc.Extract.UTC;
 import com.beanc.Extract.GRADUATION;
-import com.beanc.SerialPort.Link;
 
 public class Main {
     public static void main(String[] args) {
-        SolveToOriginalInfo info = new SolveToOriginalInfo("$GNGGA,084724.00," +
-                "3641.1191106,N,11710.8015014,E,1,64,1.0,82.175,M,-2.200,M,0.0,0000*76");
+        SolveToOriginalInfo info = new SolveToOriginalInfo("$GNGGA,051122.00,3640.4242551,N,11711.1128930,E,1,49,1.0,111.887,M,-2.200,M,0.0,0000*49");
         //new Link();
 
         System.out.println("数据检测：" +info.getCheckGNGGA()+
@@ -41,5 +40,8 @@ public class Main {
                     "\n(lng)" + Conversion.WGS84ToGCJ02(ddd)[0] +
                     "\t(lat)" + Conversion.WGS84ToGCJ02(ddd)[1]);
         }
+
+        System.out.println("经度："+ EasyConversion.GNGGA_To_GCJ02("$GNGGA,051122.00,3640.4242551,N,11711.1128930,E,1,49,1.0,111.887,M,-2.200,M,0.0,0000*49")[0] +
+                "\t纬度："+ EasyConversion.GNGGA_To_GCJ02("$GNGGA,051122.00,3640.4242551,N,11711.1128930,E,1,49,1.0,111.887,M,-2.200,M,0.0,0000*49")[1]);
     }
 }
